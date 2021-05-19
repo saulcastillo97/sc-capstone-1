@@ -1,1 +1,7 @@
-
+export DATABASE_URL = 'postgres://taniaturcios@localhost:5432/capstonedb'
+export CALLBACK_URL = 'http://localhost:8080/login-results'
+export AUTH0_DOMAIN = 'scfsnd.us.auth0.com'
+export AUTH0_CLIENT_ID ='sSkNBpxDvpXIk8K9H83IyY37BqzG8bye'
+export ALGORITHMS = '['RS256']'
+export API_AUDIENCE = 'casting'
+export SECRET = ''
