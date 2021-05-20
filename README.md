@@ -181,5 +181,5 @@ The API will return six error types when requests fail:
 To run unittests for this application run:
 
 ``` python
-python test_app.py
+python3 test_app.py
 ```
