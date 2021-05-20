@@ -20,7 +20,7 @@ flask run --reload
 ```
 
 ## Heroku URL
-_____________
+https://sc-capstone-1.herokuapp.com/ | https://git.heroku.com/sc-capstone-1.git
 
 ## API Reference
 ### Error Handling
@@ -75,26 +75,106 @@ The API will return six error types when requests fail:
 
 ### Endpoints
 #### GET /actors
-
-#### GET /movies
-#### DELETE /actors/int:id
-#### DELETE /actors/int:id
-#### POST /actors
-#### POST /movies
-#### PATCH /actors/int:id
+- Gets list of actors
+- Returns: An object with a success key and a list of actors.
 ``` python
-payload = {
-  name: Mark Hamill
-  age: 69
-  gender: male
+{
+    'success': True,
+    'actors': [{
+                'id': 1,
+                'name': Saul,
+                'age': 63,
+                'gender': Male
+               },
+	       {
+                'id': 2,
+                'name': Brad,
+                'age': 29,
+              }]
+}
+```
+#### GET /movies
+- Gets list of movies
+- Returns: An object with a success key and a list of movies.
+``` python
+{
+    'success': True,
+    'movies': [{
+                'id': 1,
+                'title': Test,
+                'release_date': 2001-12-19,
+               },
+	       {
+                'id': 1,
+                'title': Test,
+                'release_date': 2000-10-20,
+               }]
+}
+```
+
+#### DELETE /actors/int:id
+- Deletes the actor with id: id
+- Returns: Object with a success key and a list which contains the deleted actor id.
+``` python
+{
+    'success': True,
+    'actor': id
+}
+```
+#### DELETE /movies/int:id
+- Deletes the movie with id: id
+- Returns: Object with a success key and a list which contains the deleted movie id.
+``` python
+{
+    'success': True,
+    'id': id
+}
+```
+#### POST /actors
+- adds an actor to the database
+- Returns: An object with a success key
+``` python
+{
+    'success': True,
+}
+```
+
+#### POST /movies
+- adds a movie to the database
+- Returns: An object with a success key
+``` python
+{
+    'success': True,
+}
+```
+
+#### PATCH /actors/int:id
+- updates the actor with id: id
+- Returns: Object a list that contains the updated actor object.
+``` python
+{
+    'success': True,
+    'actor_details': [{
+                'id': 1,
+                'name': Saul,
+                'age': 1900-10-12,
+                'gender': Male
+               }]
 }
 ```
 #### PATCH /movies/int:id
+- updates the movie with id: id
+- Returns: Object with a success key and a list which contains the updated movie object.
 ``` python
 {
-  title: The Empire Strikes Back,
-  release_date: 05,21,1980
+    'success': True,
+    'movies': [{
+                'id': 1,
+                'title': Coco,
+                'release_date': 2017-11-22,
+               }]
 }
+
 ```
 
 ## Testing
