@@ -6,12 +6,17 @@ from urllib.request import urlopen
 import traceback
 from flask import abort
 import sys
+import os
 #import pdb
 #import stacktrace
 
-AUTH0_DOMAIN = 'scfsnd.us.auth0.com'#'udacity-fsnd.auth0.com'
-ALGORITHMS = ['RS256']
-API_AUDIENCE = 'casting'
+AUTH0_DOMAIN = os.environ['AUTH0_DOMAIN']
+ALGORITHMS = os.environ['ALGORITHMS']
+API_AUDIENCE = os.environ['API_AUDIENCE']
+
+#AUTH0_DOMAIN = 'scfsnd.us.auth0.com'#'udacity-fsnd.auth0.com'
+#ALGORITHMS = ['RS256']
+#API_AUDIENCE = 'casting'
 
 ## AuthError Exception
 '''
